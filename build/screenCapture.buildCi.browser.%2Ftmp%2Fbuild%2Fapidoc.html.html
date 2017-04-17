@@ -56,6 +56,24 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.ratelimiter.ratelimiter">
+            function <span class="apidocSignatureSpan"></span>ratelimiter
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ratelimiter.toString">
+            function <span class="apidocSignatureSpan">ratelimiter.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ratelimiter.</span>microtime</span>
 
         </li>
@@ -75,10 +93,59 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.ratelimiter.toString">module ratelimiter.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ratelimiter.toString.toString">
+            function <span class="apidocSignatureSpan">ratelimiter.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.ratelimiter" id="apidoc.module.ratelimiter">module ratelimiter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ratelimiter.ratelimiter" id="apidoc.element.ratelimiter.ratelimiter">
+        function <span class="apidocSignatureSpan"></span>ratelimiter
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Limiter(opts) {
+  this.id = opts.id;
+  this.db = opts.db;
+  assert(this.id, '.id required');
+  assert(this.db, '.db required');
+  this.max = opts.max || 2500;
+  this.duration = opts.duration || 3600000;
+  this.key = 'limit:' + this.id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ratelimiter.toString" id="apidoc.element.ratelimiter.toString">
+        function <span class="apidocSignatureSpan">ratelimiter.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
 
@@ -117,6 +184,24 @@
 
 ## Result Object
 ...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ratelimiter.toString" id="apidoc.module.ratelimiter.toString">module ratelimiter.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ratelimiter.toString.toString" id="apidoc.element.ratelimiter.toString.toString">
+        function <span class="apidocSignatureSpan">ratelimiter.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
