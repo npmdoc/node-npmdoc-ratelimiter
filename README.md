@@ -1,9 +1,11 @@
 # api documentation for  [ratelimiter (v3.0.3)](https://github.com/visionmedia/node-ratelimiter#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-ratelimiter.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ratelimiter) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ratelimiter.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ratelimiter)
 #### abstract rate limiter backed by redis
 
-[![NPM](https://nodei.co/npm/ratelimiter.png?downloads=true)](https://www.npmjs.com/package/ratelimiter)
+[![NPM](https://nodei.co/npm/ratelimiter.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ratelimiter)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-ratelimiter/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-ratelimiter_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-ratelimiter/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-ratelimiter/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-ratelimiter/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-ratelimiter/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-ratelimiter/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-ratelimiter/build/screenCapture.npmPackageListing.svg)
 
@@ -21,8 +23,7 @@
     },
     "contributors": [
         {
-            "name": "Francois-Guillaume Ribreau",
-            "email": "npm@fgribreau.com"
+            "name": "Francois-Guillaume Ribreau"
         }
     ],
     "dependencies": {},
@@ -50,17 +51,14 @@
     "license": "MIT",
     "maintainers": [
         {
-            "name": "tjholowaychuk",
-            "email": "tj@vision-media.ca"
+            "name": "tjholowaychuk"
         },
         {
-            "name": "noamshemesh",
-            "email": "noamshemesh@gmail.com"
+            "name": "noamshemesh"
         }
     ],
     "name": "ratelimiter",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/visionmedia/node-ratelimiter.git"
@@ -70,54 +68,6 @@
     },
     "version": "3.0.3"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module ratelimiter](#apidoc.module.ratelimiter)
-1.  object <span class="apidocSignatureSpan">ratelimiter.</span>microtime
-
-#### [module ratelimiter.microtime](#apidoc.module.ratelimiter.microtime)
-1.  [function <span class="apidocSignatureSpan">ratelimiter.microtime.</span>now ()](#apidoc.element.ratelimiter.microtime.now)
-
-
-
-# <a name="apidoc.module.ratelimiter"></a>[module ratelimiter](#apidoc.module.ratelimiter)
-
-
-
-# <a name="apidoc.module.ratelimiter.microtime"></a>[module ratelimiter.microtime](#apidoc.module.ratelimiter.microtime)
-
-#### <a name="apidoc.element.ratelimiter.microtime.now"></a>[function <span class="apidocSignatureSpan">ratelimiter.microtime.</span>now ()](#apidoc.element.ratelimiter.microtime.now)
-- description and source-code
-```javascript
-now = function () {
-  var diff = process.hrtime(start);
-
-  return time + diff[0] * 1e6 + Math.round(diff[1] * 1e-3);
-}
-```
-- example usage
-```shell
-...
-  res.set('X-RateLimit-Reset', limit.reset);
-
-  // all good
-  debug('remaining %s/%s %s', limit.remaining - 1, limit.total, id);
-  if (limit.remaining) return next();
-
-  // not good
-  var delta = (limit.reset * 1000) - Date.now() | 0;
-  var after = limit.reset - (Date.now() / 1000) | 0;
-  res.set('Retry-After', after);
-  res.send(429, 'Rate limit exceeded, retry in ' + ms(delta, { long: true }));
-});
-'''
-
-## Result Object
-...
 ```
 
 
