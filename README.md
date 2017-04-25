@@ -1,4 +1,7 @@
-# api documentation for  [ratelimiter (v3.0.3)](https://github.com/visionmedia/node-ratelimiter#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-ratelimiter.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ratelimiter) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ratelimiter.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ratelimiter)
+# npmdoc-ratelimiter
+
+#### basic api documentation for  [ratelimiter (v3.0.3)](https://github.com/visionmedia/node-ratelimiter#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-ratelimiter.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ratelimiter) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ratelimiter.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ratelimiter)
+
 #### abstract rate limiter backed by redis
 
 [![NPM](https://nodei.co/npm/ratelimiter.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/ratelimiter)
@@ -66,7 +69,8 @@
     "scripts": {
         "test": "mocha"
     },
-    "version": "3.0.3"
+    "version": "3.0.3",
+    "bin": {}
 }
 ```
 
