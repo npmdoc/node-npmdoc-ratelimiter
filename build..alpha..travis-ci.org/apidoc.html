@@ -72,10 +72,16 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.ratelimiter.toString">
-            function <span class="apidocSignatureSpan">ratelimiter.</span>toString
-            <span class="apidocSignatureSpan">()</span>
+            <a class="apidocElementLiA" href="#apidoc.element.ratelimiter.index">
+            function <span class="apidocSignatureSpan">ratelimiter.</span>index
+            <span class="apidocSignatureSpan">(opts)</span>
             </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ratelimiter.</span>index.prototype</span>
 
         </li>
 
@@ -87,12 +93,34 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.ratelimiter.microtime">module ratelimiter.microtime</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.ratelimiter.index">module ratelimiter.index</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.ratelimiter.microtime.now">
-            function <span class="apidocSignatureSpan">ratelimiter.microtime.</span>now
+            <a class="apidocElementLiA" href="#apidoc.element.ratelimiter.index.index">
+            function <span class="apidocSignatureSpan">ratelimiter.</span>index
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ratelimiter.index.prototype">module ratelimiter.index.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ratelimiter.index.prototype.get">
+            function <span class="apidocSignatureSpan">ratelimiter.index.prototype.</span>get
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ratelimiter.index.prototype.inspect">
+            function <span class="apidocSignatureSpan">ratelimiter.index.prototype.</span>inspect
             <span class="apidocSignatureSpan">()</span>
             </a>
 
@@ -100,12 +128,12 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.ratelimiter.toString">module ratelimiter.toString</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.ratelimiter.microtime">module ratelimiter.microtime</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.ratelimiter.toString.toString">
-            function <span class="apidocSignatureSpan">ratelimiter.</span>toString
+            <a class="apidocElementLiA" href="#apidoc.element.ratelimiter.microtime.now">
+            function <span class="apidocSignatureSpan">ratelimiter.microtime.</span>now
             <span class="apidocSignatureSpan">()</span>
             </a>
 
@@ -141,19 +169,129 @@
 
 
     <h2>
-        <a href="#apidoc.element.ratelimiter.toString" id="apidoc.element.ratelimiter.toString">
-        function <span class="apidocSignatureSpan">ratelimiter.</span>toString
-        <span class="apidocSignatureSpan">()</span>
+        <a href="#apidoc.element.ratelimiter.index" id="apidoc.element.ratelimiter.index">
+        function <span class="apidocSignatureSpan">ratelimiter.</span>index
+        <span class="apidocSignatureSpan">(opts)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
+    <li>description and source-code<pre class="apidocCodePre">function Limiter(opts) {
+  this.id = opts.id;
+  this.db = opts.db;
+  assert(this.id, &#x27;.id required&#x27;);
+  assert(this.db, &#x27;.db required&#x27;);
+  this.max = opts.max || 2500;
+  this.duration = opts.duration || 3600000;
+  this.key = &#x27;limit:&#x27; + this.id;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ratelimiter.index" id="apidoc.module.ratelimiter.index">module ratelimiter.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ratelimiter.index.index" id="apidoc.element.ratelimiter.index.index">
+        function <span class="apidocSignatureSpan">ratelimiter.</span>index
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Limiter(opts) {
+  this.id = opts.id;
+  this.db = opts.db;
+  assert(this.id, &#x27;.id required&#x27;);
+  assert(this.db, &#x27;.db required&#x27;);
+  this.max = opts.max || 2500;
+  this.duration = opts.duration || 3600000;
+  this.key = &#x27;limit:&#x27; + this.id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ratelimiter.index.prototype" id="apidoc.module.ratelimiter.index.prototype">module ratelimiter.index.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ratelimiter.index.prototype.get" id="apidoc.element.ratelimiter.index.prototype.get">
+        function <span class="apidocSignatureSpan">ratelimiter.index.prototype.</span>get
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (fn) {
+  var db = this.db;
+  var duration = this.duration;
+  var key = this.key;
+  var max = this.max;
+  var now = microtime.now();
+  var start = now - duration * 1000;
+
+  db.multi()
+    .zremrangebyscore([key, 0, start])
+    .zcard([key])
+    .zadd([key, now, now])
+    .zrange([key, 0, 0])
+    .pexpire([key, duration])
+    .exec(function (err, res) {
+      if (err) return fn(err);
+      var count = parseInt(Array.isArray(res[0]) ? res[1][1] : res[1]);
+      var oldest = parseInt(Array.isArray(res[0]) ? res[3][1] : res[3]);
+      fn(null, {
+        remaining: count &#x3c; max ? max - count : 0,
+        reset: Math.floor((oldest + duration * 1000) / 1000000),
+        total: max
+      });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Example
+
+ Example Connect middleware implementation limiting against a `user._id`:
+
+```js
+var id = req.user._id;
+var limit = new Limiter({ id: id, db: db });
+limit.<span class="apidocCodeKeywordSpan">get</span>(function(err, limit){
+if (err) return next(err);
+
+res.set(&#x27;X-RateLimit-Limit&#x27;, limit.total);
+res.set(&#x27;X-RateLimit-Remaining&#x27;, limit.remaining - 1);
+res.set(&#x27;X-RateLimit-Reset&#x27;, limit.reset);
+
+// all good
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ratelimiter.index.prototype.inspect" id="apidoc.element.ratelimiter.index.prototype.inspect">
+        function <span class="apidocSignatureSpan">ratelimiter.index.prototype.</span>inspect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inspect = function () {
+  return &#x27;&#x3c;Limiter id=&#x27; +
+    this.id + &#x27;, duration=&#x27; +
+    this.duration + &#x27;, max=&#x27; +
+    this.max + &#x27;&#x3e;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
 
 
 </div>
@@ -175,40 +313,22 @@
   return time + diff[0] * 1e6 + Math.round(diff[1] * 1e-3);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  res.set(&#x27;X-RateLimit-Reset&#x27;, limit.reset);
+ */
 
-  // all good
-  debug(&#x27;remaining %s/%s %s&#x27;, limit.remaining - 1, limit.total, id);
-  if (limit.remaining) return next();
+Limiter.prototype.get = function (fn) {
+var db = this.db;
+var duration = this.duration;
+var key = this.key;
+var max = this.max;
+var now = microtime.<span class="apidocCodeKeywordSpan">now</span>();
+var start = now - duration * 1000;
 
-  // not good
-  var delta = (limit.reset * 1000) - Date.<span class="apidocCodeKeywordSpan">now</span>() | 0;
-  var after = limit.reset - (Date.now() / 1000) | 0;
-  res.set(&#x27;Retry-After&#x27;, after);
-  res.send(429, &#x27;Rate limit exceeded, retry in &#x27; + ms(delta, { long: true }));
-});
-```
-
-## Result Object
+db.multi()
+  .zremrangebyscore([key, 0, start])
+  .zcard([key])
+  .zadd([key, now, now])
+  .zrange([key, 0, 0])
 ...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.ratelimiter.toString" id="apidoc.module.ratelimiter.toString">module ratelimiter.toString</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.ratelimiter.toString.toString" id="apidoc.element.ratelimiter.toString.toString">
-        function <span class="apidocSignatureSpan">ratelimiter.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
